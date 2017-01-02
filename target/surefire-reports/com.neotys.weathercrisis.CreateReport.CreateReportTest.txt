@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.neotys.weathercrisis.CreateReport.CreateReportTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in com.neotys.weathercrisis.CreateReport.CreateReportTest
+com.neotys.weathercrisis.CreateReport.CreateReportTest  Time elapsed: 0.003 sec  <<< ERROR!
+java.lang.ExceptionInInitializerError
+	at com.neotys.weathercrisis.CreateReport.CreateReportTest.before(CreateReportTest.java:42)
+Caused by: java.lang.RuntimeException: Issue contacting DesignAPI server.
+	at com.neotys.weathercrisis.CreateReport.CreateReportTest.before(CreateReportTest.java:42)
+Caused by: java.io.FileNotFoundException: http://cpv4.intranet.neotys.com:7400/Design/v1/Service.svc//$metadata
+	at com.neotys.weathercrisis.CreateReport.CreateReportTest.before(CreateReportTest.java:42)
+
