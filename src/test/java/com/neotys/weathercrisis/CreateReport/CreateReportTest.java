@@ -3,6 +3,7 @@ package com.neotys.weathercrisis.CreateReport;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -33,11 +34,11 @@ public class CreateReportTest	 {
     public static   TestName testName = new TestName();
 
 	
-	@BeforeClass
+	@Before
     public static void before() {
         
         // projectPath used to open NeoLoad project, null to use currently opened Project.
-        final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_demo\\Global_demo.nlp";
+        final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
         webdriver = new FirefoxDriver();
         driver = NLWebDriverFactory.newNLWebDriver(webdriver, testName.getMethodName(), projectPath);
        
