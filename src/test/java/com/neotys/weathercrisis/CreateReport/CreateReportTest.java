@@ -31,11 +31,11 @@ public class CreateReportTest	 {
 	 static WebDriver webdriver;
 	
 	@ClassRule
-    public static   TestName testName = new TestName();
+    public    TestName testName = new TestName();
 
 	
 	@Before
-    public static void before() {
+    public  void before() {
         
         // projectPath used to open NeoLoad project, null to use currently opened Project.
         final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
