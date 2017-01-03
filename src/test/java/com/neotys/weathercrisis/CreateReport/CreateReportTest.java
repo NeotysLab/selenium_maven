@@ -43,10 +43,10 @@ public class CreateReportTest	 {
         
         // projectPath used to open NeoLoad project, null to use currently opened Project.
         final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
-        //webdriver = new FirefoxDriver();
-        final File file = new File(CHROME_DRIVER_PATH);
+        webdriver = new FirefoxDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
+       /* final File file = new File(CHROME_DRIVER_PATH);
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-		webdriver = new ChromeDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
+		webdriver = new ChromeDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));*/
         driver = NLWebDriverFactory.newNLWebDriver(webdriver, testName.getMethodName(), projectPath);
        
 	}
