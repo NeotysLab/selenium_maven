@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 import org.openqa.selenium.By;
@@ -30,7 +31,7 @@ public class CreateReportTest	 {
 	 static NLWebDriver driver;
 	 static WebDriver webdriver;
 	
-	@ClassRule
+	@Rule
     public    TestName testName = new TestName();
 
 	
