@@ -1,5 +1,6 @@
 package com.neotys.weathercrisis.CreateReport;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.neotys.selenium.proxies.NLWebDriver;
@@ -40,7 +42,10 @@ public class CreateReportTest	 {
         
         // projectPath used to open NeoLoad project, null to use currently opened Project.
         final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
-        webdriver = new FirefoxDriver();
+        //webdriver = new FirefoxDriver();
+        final File file = new File(CHROME_DRIVER_PATH);
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+		webdriver = new ChromeDriver();
         driver = NLWebDriverFactory.newNLWebDriver(webdriver, testName.getMethodName(), projectPath);
        
 	}
