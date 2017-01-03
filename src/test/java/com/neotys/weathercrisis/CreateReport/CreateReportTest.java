@@ -2,7 +2,7 @@ package com.neotys.weathercrisis.CreateReport;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
-
+import static com.neotys.selenium.proxies.NLWebDriverFactory.addProxyCapabilitiesIfNecessary;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.neotys.selenium.proxies.NLWebDriver;
 import com.neotys.selenium.proxies.NLWebDriverFactory;
@@ -45,7 +46,7 @@ public class CreateReportTest	 {
         //webdriver = new FirefoxDriver();
         final File file = new File(CHROME_DRIVER_PATH);
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-		webdriver = new ChromeDriver();
+		webdriver = new ChromeDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
         driver = NLWebDriverFactory.newNLWebDriver(webdriver, testName.getMethodName(), projectPath);
        
 	}
