@@ -57,7 +57,6 @@ public class CreateReportTest	 {
 	  public  void testUshahidi() throws Exception {
 		 setUp();
 		 driver.startTransaction("Home Page");
-
 		 driver.get(getBaseUrl());
 	    
 		 driver.startTransaction("Submit a report");
