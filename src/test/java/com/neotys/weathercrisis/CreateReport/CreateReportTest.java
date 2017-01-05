@@ -14,6 +14,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.neotys.selenium.proxies.NLWebDriver;
@@ -21,7 +23,7 @@ import com.neotys.selenium.proxies.NLWebDriverFactory;
 
 public class CreateReportTest	 {
 	private static final String CHROME_DRIVER_PATH = "C:\\Selenium\\chromedriver.exe";
-	private static final String PHANTOM_JS_EXE_PATH = "C:\\phantomjs\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe";
+	private static final String PHANTOM_JS_EXE_PATH = "/opt/phantomjs/bin/phantomjs";
 
 	/*private static final Options OPTIONS;
 	private static final String DRIVER = "driver";*/
@@ -43,10 +45,17 @@ public class CreateReportTest	 {
         
         // projectPath used to open NeoLoad project, null to use currently opened Project.
         final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
-        webdriver = new FirefoxDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
+       // webdriver = new FirefoxDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
        /* final File file = new File(CHROME_DRIVER_PATH);
+        * 
+        * 
+        
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 		webdriver = new ChromeDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));*/
+        DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setJavascriptEnabled(true);
+		cap.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, PHANTOM_JS_EXE_PATH);
+		webdriver = new PhantomJSDriver(addProxyCapabilitiesIfNecessary(cap));
         driver = NLWebDriverFactory.newNLWebDriver(webdriver, testName.getMethodName(), projectPath);
        
 	}
