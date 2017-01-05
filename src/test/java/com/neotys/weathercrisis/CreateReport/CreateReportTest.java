@@ -40,8 +40,6 @@ public class CreateReportTest	 {
 	
 	@Before
     public  void before() {
-        
-        // projectPath used to open NeoLoad project, null to use currently opened Project.
         final String projectPath = "C:\\Users\\Administrator\\Documents\\NeoLoad Projects\\Global_Demo\\Global_Demo.nlp";
        // webdriver = new FirefoxDriver(addProxyCapabilitiesIfNecessary(new DesiredCapabilities()));
        /* final File file = new File(CHROME_DRIVER_PATH)
