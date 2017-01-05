@@ -25,8 +25,6 @@ public class CreateReportTest	 {
 	private static final String CHROME_DRIVER_PATH = "C:\\Selenium\\chromedriver.exe";
 	private static final String PHANTOM_JS_EXE_PATH = "/opt/phantomjs/bin/phantomjs";
 
-	/*private static final Options OPTIONS;
-	private static final String DRIVER = "driver";*/
 	private static final String PHANTOM_JS = "PhantomJs";
 	private static final String CHROME = "Chrome";
 	private static final String FIREFOX = "FireFox";
