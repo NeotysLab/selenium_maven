@@ -88,8 +88,8 @@ public class CreateReportTest	 {
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    driver.startTransaction("Report page");
 
-	    driver.findElement(By.linkText("Return to the reports page")).click();
-	    
+	   // driver.findElement(By.linkText("Return to the reports page")).click();
+	    driver.get(getBaseUrl()+"reports");
 	    
 	    driver.close();
 		
